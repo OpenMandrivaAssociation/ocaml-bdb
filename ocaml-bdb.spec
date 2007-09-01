@@ -1,8 +1,7 @@
 %define up_name ocamlbdb
 %define name	ocaml-bdb
 %define version	4.3.21
-%define release	%mkrel 2
-%define ocaml_sitelib %(if [ -x /usr/bin/ocamlc ]; then ocamlc -where;fi)/site-lib
+%define release	%mkrel 3
 
 Name:		%{name}
 Version:	%{version}
@@ -26,6 +25,7 @@ easy to use interface.
 Summary:	Development files for %{name}
 Group:		Development/Other
 Requires:	db4-devel
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 This package contains the development files needed to build applications
@@ -45,9 +45,13 @@ install -m 644 bdb.cma bdb.cmi libcamlbdb.a %{buildroot}/%{ocaml_sitelib}/bdb
 %clean
 rm -rf %{buildroot}
 
-%files devel
+%files
 %defattr(-,root,root)
 %doc COPYING CREDITS README
-%{ocaml_sitelib}/bdb
+%dir %{ocaml_sitelib}/bdb
+%{ocaml_sitelib}/bdb/*.cmi
 
-
+%files devel
+%defattr(-,root,root)
+%{ocaml_sitelib}/bdb/*
+%exclude %{ocaml_sitelib}/bdb/*.cmi
