@@ -13,7 +13,6 @@ License:	GPL
 Group:		Development/Other
 BuildRequires:	ocaml
 BuildRequires:	db4-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 CamlGI is a library to enable you to write CGI and FastCGI in OCaml. It is
