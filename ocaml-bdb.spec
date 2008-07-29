@@ -1,7 +1,7 @@
 %define up_name ocamlbdb
 %define name	ocaml-bdb
 %define version	4.3.21
-%define release	%mkrel 4
+%define release	%mkrel 6
 
 Name:		%{name}
 Version:	%{version}
