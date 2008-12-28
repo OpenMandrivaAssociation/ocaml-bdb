@@ -1,7 +1,7 @@
 %define up_name ocamlbdb
 %define name	ocaml-bdb
 %define version	4.3.21
-%define release	%mkrel 6
+%define release	%mkrel 7
 
 Name:		%{name}
 Version:	%{version}
@@ -39,8 +39,8 @@ make BDB_DIR=%{_prefix} CFLAGS="-I%{_libdir}/ocaml/"
 
 %install
 rm -rf %{buildroot}
-install -d -m 755 %{buildroot}/%{ocaml_sitelib}/bdb 
-install -m 644 bdb.cma bdb.cmi libcamlbdb.a %{buildroot}/%{ocaml_sitelib}/bdb
+install -d -m 755 %{buildroot}/%{_libdir}/ocaml/bdb 
+install -m 644 bdb.cma bdb.cmi libcamlbdb.a %{buildroot}/%{_libdir}/ocaml/bdb
 
 %clean
 rm -rf %{buildroot}
@@ -48,10 +48,10 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc COPYING CREDITS README
-%dir %{ocaml_sitelib}/bdb
-%{ocaml_sitelib}/bdb/*.cmi
+%dir %{_libdir}/ocaml/bdb
+%{_libdir}/ocaml/bdb/*.cmi
+%{_libdir}/ocaml/bdb/*.cma
 
 %files devel
 %defattr(-,root,root)
-%{ocaml_sitelib}/bdb/*
-%exclude %{ocaml_sitelib}/bdb/*.cmi
+%{_libdir}/ocaml/bdb/*.a
