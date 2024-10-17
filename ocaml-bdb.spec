@@ -8,7 +8,7 @@ Version:	%{version}
 Release:	%{release}
 Summary:	OCaml interface to Berkeley-DB
 Source: 	http://www.eecs.harvard.edu/~stein/%{up_name}-%{version}.tar.bz2
-URL:		http://www.eecs.harvard.edu/~stein/
+URL:		https://www.eecs.harvard.edu/~stein/
 License:	GPL
 Group:		Development/Other
 BuildRequires:	ocaml
