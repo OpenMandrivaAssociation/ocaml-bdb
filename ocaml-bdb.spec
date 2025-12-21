@@ -11,6 +11,7 @@ Source: 	http://www.eecs.harvard.edu/~stein/%{up_name}-%{version}.tar.bz2
 URL:		https://www.eecs.harvard.edu/~stein/
 License:	GPL
 Group:		Development/Other
+BuildRequires:	make
 BuildRequires:	ocaml
 BuildRequires:	db4-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}
